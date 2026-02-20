@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Whisper to Input Firefox",
+  "version": "1.0",
+  "description": "Whisper STT text to input",
+  "developer": {
+    "name": "Your Name"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "whisper-to-input@example.com",
+      "strict_min_version": "109.0"
+    }
+  },
+  "permissions": [ "activeTab", "tabs" ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; connect-src 'self' ws://127.0.0.1:9999 ws://localhost:9999 http://127.0.0.1:9999;"
+  },
+  "background":{
+	  "scripts" : ["background.js"],
+	  "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
