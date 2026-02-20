@@ -13,10 +13,19 @@ import websockets
 import threading
 import json
 
+from dotenv import load_dotenv
+
+# .env 파일 로드
+load_dotenv()
+
+# 환경 변수에서 경로 읽기 (설정이 없으면 기본값 사용)
+OBSIDIAN_VAULT_PATH = os.getenv("OBSIDIAN_VAULT_PATH", "./default_vault")
+
+print(f"✅ 로드된 옵시디언 경로: {OBSIDIAN_VAULT_PATH}")
+
 # --- 설정 구간 ---
 #MODEL_TYPE = "large-v3"
 MODEL_TYPE = "turbo"
-OBSIDIAN_VAULT_PATH = "/home/a3040/Documents/Obsidian Vault" # 본인의 옵시디언 경로로 수정
 DICT_FILE = "personal_dict.txt"
 TEMP_AUDIO = "temp_record.wav"
 

@@ -1,0 +1,5 @@
+customtkinter==5.2.2
+openai-whisper==20250625
+python-dotenv==1.2.1
+sounddevice==0.5.5
+websockets==15.0.1
